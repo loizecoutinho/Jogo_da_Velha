@@ -9,13 +9,16 @@
 <body>
     <main class="container">
         <h1>Jogo da velha</h1>
-        <p id="status" class="status">JOGADOR 1:</p>
-        <p id="status2" class="status2">Pontuação:</p>
-        <p id="status3" class="status3">JOGADOR 2:</p>
-        <p id="status4" class="status4">Pontuação:</p>
+        <p id="jogador1" class="jogador1">JOGADOR 1:</p>
+        <p id="pontuacao1" class="pontuacao1">Pontuação:</p>
+        <p id="jogador2" class="jogador2">JOGADOR 2:</p>
+        <p id="pontuacao2" class="pontuacao2">Pontuação:</p>
+        
+        <!--Posição geral para indica qual jogador está na vez.-->
+        <p id="status" class="status">Vez do jogador 1</p>
 
         <!-- Posição para qual jogador ganhou.-->
-        <p id="winner" class="winner"></p>
+        <p id="vencedor" class="vencedor">x</p>
         
         <!--Estrutura geral do tabuleiro -->
         <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
