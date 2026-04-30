@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da velha</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <main class="container">
         <h1>Jogo da velha</h1>
-        <p id="status" class="status">Vez do jogador X</p>
+        <p id="status" class="status">JOGADOR 1:</p>
+        <p id = "status2" class ="status2">JOGADOR 2:</p>
 
         <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
             <button class="cell" data-index="0" aria-label="Casa 1"></button>
@@ -22,9 +23,14 @@
             <button class="cell" data-index="7" aria-label="Casa 8"></button>
             <button class="cell" data-index="8" aria-label="Casa 9"></button>
         </section>
-        
-        <button id="reset" class="reset-button">Reiniciar Jogo</button>
-        
+          
+    </main>
+
+    <main class="control-bnt">
+        <button id="start" class="start-button">Iniciar jogo</button>
+        <button id="reset" class="reset-button">Reiniciar jogo</button>
+        <button id="reset2" class="reset2-button">Reiniciar tabela</button>
+        <button id="reset3" class="reset3-button">Finalizar jogo</button>
     </main>
     
 </body>

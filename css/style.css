@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0A3316;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 75px;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.status {
+    position: absolute;
+    top: 28%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    margin-top: 10px;
+    text-align: left;
+}
+.status2 {
+    position: absolute;
+    top: 28%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Desenho das linhas horizontais e verticais  */
+#board{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0px;
+    margin: 20px 0; 
+    
+    background-image: linear-gradient(to right,
+    transparent 0,
+    transparent 99px,
+   white 99px,
+   white 101px,
+    transparent 101px), linear-gradient(to right,
+    transparent 0,
+    transparent 199px,
+   white 199px,
+   white 201px,
+    transparent 201px) ,linear-gradient(to bottom,
+    transparent 0,  
+    transparent 99px,
+    white 99px,
+    white 101px,
+    transparent 101px),
+    linear-gradient(to bottom,
+    transparent 0,  
+    transparent 199px,
+    white 199px,
+    white 201px,
+    transparent 201px);
+    
+}
+
+.cell {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover{
+    transform: translateX(-4px) scale(1.03);
+    background: gray ;
+    box-shadow: #0A3316;
+}
+
+#control-bnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+
+}
+
+.control-bnt button{
+    padding: 10 px 20 px;
+    min-width: 150px;
+    margin-bottom: 40%;
+    border: 2px solid black;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #fff;
+
+}
