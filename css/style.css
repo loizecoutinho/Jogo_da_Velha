@@ -24,7 +24,7 @@ h1 {
 .jogador1{
     position: absolute;
     top: 28%;
-    left: 10%;
+    left: 25%;
     transform: translateY(-50%);
     color: #fff;
     margin-top: 10px;
@@ -33,7 +33,7 @@ h1 {
 .pontuacao1{
     position: absolute;
     top: 35%;
-    left: 13%;
+    left: 28%;
     transform: translateY(-50%);
     color: #fff;
     margin-top: 10px;
@@ -42,7 +42,7 @@ h1 {
 .jogador2{
     position: absolute;
     top: 28%;
-    right: 10%;
+    right: 25%;
     transform: translateY(-50%);
     color: #fff;
     margin-top: 10px;
@@ -51,7 +51,7 @@ h1 {
 .pontuacao2{
     position: absolute;
     top: 35%;
-    right: 8%;
+    right: 23%;
     transform: translateY(-50%);
     color: #fff;
     margin-top: 10px;
@@ -152,7 +152,7 @@ h1 {
     left:0;
     transform: center;
     transform: scale(0);
-    transition: trasnform 0.3s ease;
+    transition: transform 0.3s ease;
 
 }
 
@@ -170,15 +170,15 @@ h1 {
     transform: scaleX(1);
 }
 /*Combinação nas colunas*/
-win-col-0{
+.win-col-0{
     transform: rotate(90deg) scaleX(1);
     left: -100;
 }
-win-col-1{
+.win-col-1{
     transform: rotate(90deg) scaleX(1);
     left: 0;
 }
-win-col-2{
+.win-col-2{
     transform: rotate(90deg) scaleX(1);
     left: 100;
 }
