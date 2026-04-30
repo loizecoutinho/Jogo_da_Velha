@@ -61,6 +61,7 @@ h1 {
 
 /* Desenho das linhas horizontais e verticais  */
 #board{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
@@ -126,5 +127,47 @@ h1 {
 }
 
 .win{
+    position: absolute;
+    height: 5px;
+    width: 300px;
     background-color: red;
+    top: 50%;
+    left:0;
+    transform: center;
+    transform: scale(0);
+    transition: trasnform 0.3s ease;
+
+}
+
+.win-row-0{
+    top: 50px;
+    transform: scaleX(1);
+}
+.win-row-1{
+    top: 150px;
+    transform: scaleX(1);
+}
+.win-row-2{
+    top: 250px;
+    transform: scaleX(1);
+}
+win-col-0{
+    transform: rotate(90deg) scaleX(1);
+    left: -100;
+}
+win-col-1{
+    transform: rotate(90deg) scaleX(1);
+    left: 0;
+}
+win-col-2{
+    transform: rotate(90deg) scaleX(1);
+    left: 100;
+}
+.win.diag-1{
+    transform: rotate(45deg) scaleX(1);
+    top: 150px;
+}
+.win.diag-2{
+    transform: rotate(-45deg) scaleX(1);
+    top: 150px;
 }
