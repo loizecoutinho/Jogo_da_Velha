@@ -14,6 +14,10 @@
         <p id="status3" class="status3">JOGADOR 2:</p>
         <p id="status4" class="status4">Pontuação:</p>
 
+        <!-- Posição para qual jogador ganhou.-->
+        <p id="winner" class="winner"></p>
+        
+        <!--Estrutura geral do tabuleiro -->
         <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
             <button class="cell" data-index="0" aria-label="Casa 1"></button>
             <button class="cell" data-index="1" aria-label="Casa 2"></button>
@@ -24,12 +28,14 @@
             <button class="cell" data-index="6" aria-label="Casa 7"></button>
             <button class="cell" data-index="7" aria-label="Casa 8"></button>
             <button class="cell" data-index="8" aria-label="Casa 9"></button>
-
+             
+            <!--Div para exibição da linha que demarca a combinação vencedora-->
             <div id="win-line"></div>
         </section>
           
     </main>
-
+     
+    <!--Estrutura geral dos principais botões do jogo-->
     <main class="control-bnt">
         <button id="start" class="start-button">Iniciar jogo</button>
         <button id="reset" class="reset-button">Reiniciar jogo</button>

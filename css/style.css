@@ -58,6 +58,15 @@ h1 {
     text-align: right;
 }
 
+/*Classe para exibição do jogador vencedor da partida.*/
+.winner{
+    display: none;
+    color: #fff;
+    margin-bottom: 50px;
+    margin-top: 10%;
+    text-align: center
+}
+
 
 /* Desenho das linhas horizontais e verticais  */
 #board{
@@ -126,6 +135,7 @@ h1 {
 
 }
 
+/*Estruturas de combinação reservada para exibição de uma linha vermelha que indica qual combinação foi vencedora*/
 .win{
     position: absolute;
     height: 5px;
@@ -139,6 +149,7 @@ h1 {
 
 }
 
+/*Combinação nas fileiras*/
 .win-row-0{
     top: 50px;
     transform: scaleX(1);
@@ -151,6 +162,7 @@ h1 {
     top: 250px;
     transform: scaleX(1);
 }
+/*Combinação nas colunas*/
 win-col-0{
     transform: rotate(90deg) scaleX(1);
     left: -100;
@@ -163,6 +175,7 @@ win-col-2{
     transform: rotate(90deg) scaleX(1);
     left: 100;
 }
+/*Combinação nas diagonais*/
 .win.diag-1{
     transform: rotate(45deg) scaleX(1);
     top: 150px;
