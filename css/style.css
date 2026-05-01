@@ -43,8 +43,22 @@ h1 {
 
 .player-box{
     display: flex;
+    font-size: 15px;
     flex-direction: column;
     gap: 5px;
+}
+
+.player-label{
+    display: flex;
+    align-items: center;
+    gap: 0px
+}
+
+.player-symbol{
+    width: 70px;
+    height: 70to;
+    align-items: center;
+    display: block;
 }
 
 .p1{
