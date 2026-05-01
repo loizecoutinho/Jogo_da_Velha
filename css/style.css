@@ -29,7 +29,7 @@ h1 {
 }
 
 /*Estrutura geral da exibição dos nomes dos jogadores, pontuação e simbolos abaixo*/
-.gamewrapper{
+.game-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
