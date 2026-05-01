@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Jogo da velha</h1>
+
+        <!--Estrutura de players organizadas em divs.-->
+        <div class="game-wrapper">
+            <div class="score-board">
+                <!--Estrutura para inserção de simbolos para os jogadores.-->
+                <div class="player-box p1">
+                    <div class="player-label">
+                        <img src="assets/imgs/O_jogoVelha.png" alt="" class="player-symbol">
+                        <p id="jogador1">JOGADOR 1</p>
+                    </div>
+                   
+                    <p id="pontuacao" class="score">0</p>
+                </div>
+                <!--Estrutura para inserção de simbolos para os jogadores.-->
+                <div class="player-box p2">
+                    <div class="player-label">
+                        <img src="assets/imgs/X_jogoVelha.png" alt="" class="player-symbol">
+                        <p id="jogador2">JOGADOR 2</p>
+                     </div>
+                    <p id="pontuacao2" class="score">0</p>
+                </div>
+            </div>
+
+            <!--Estrutura geral do tabuleiro -->
+            <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
+                <button class="cell" data-index="0" aria-label="Casa 1"></button>
+                <button class="cell" data-index="1" aria-label="Casa 2"></button>
+                <button class="cell" data-index="2" aria-label="Casa 3"></button>
+                <button class="cell" data-index="3" aria-label="Casa 4"></button>
+                <button class="cell" data-index="4" aria-label="Casa 5"></button>
+                <button class="cell" data-index="5" aria-label="Casa 6"></button>
+                <button class="cell" data-index="6" aria-label="Casa 7"></button>
+                <button class="cell" data-index="7" aria-label="Casa 8"></button>
+                <button class="cell" data-index="8" aria-label="Casa 9"></button>
+             
+            <!--Div para exibição da linha que demarca a combinação vencedora-->
+                <div id="win-line" class="win"></div>
+            </section>
+
+              <!--Posição geral para indica qual jogador está na vez.-->
+            <p id="status" class="status"></p>
+             <!-- Posição para qual jogador ganhou.-->
+            <p id="vencedor" class="vencedor"></p>
+
+
+        </div>
+
+        <!--Estrutura geral dos botões. -->
+        <section class="control-bnt">
+            <button id="reiniciar" class="reset-button">Reiniciar tabela</button>
+            <button id="finalizar" class="finish-button">Finalizar jogo</button>
+        </section>
+          
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
