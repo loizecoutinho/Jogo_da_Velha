@@ -23,11 +23,6 @@
                 </div>
             </div>
 
-             <!--Posição geral para indica qual jogador está na vez.-->
-            <p id="status" class="status">Vez do jogador 1</p>
-             <!-- Posição para qual jogador ganhou.-->
-            <p id="vencedor" class="vencedor">x</p>
-
             <!--Estrutura geral do tabuleiro -->
             <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
                 <button class="cell" data-index="0" aria-label="Casa 1"></button>
@@ -44,15 +39,18 @@
                 <div id="win-line" class="win"></div>
             </section>
 
+              <!--Posição geral para indica qual jogador está na vez.-->
+            <p id="status" class="status"></p>
+             <!-- Posição para qual jogador ganhou.-->
+            <p id="vencedor" class="vencedor"></p>
+
 
         </div>
 
         <!--Estrutura geral dos botões. -->
         <section class="control-bnt">
-            <button id="start" class="start-button">Iniciar jogo</button>
-            <button id="reset" class="reset-button">Reiniciar jogo</button>
-            <button id="reset2" class="reset2-button">Reiniciar tabela</button>
-            <button id="reset3" class="reset3-button">Finalizar jogo</button>
+            <button id="reiniciar" class="reset-button">Reiniciar tabela</button>
+            <button id="finalizar" class="finish-button">Finalizar jogo</button>
         </section>
           
     </main>

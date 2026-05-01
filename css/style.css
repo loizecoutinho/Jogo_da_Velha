@@ -14,65 +14,67 @@ body {
     height: 100vh;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
 h1 {
+    margin-bottom: 40px;
     color: #fff;
-    margin-bottom: 75px;
-    margin-top: 20%;
+}
+
+.gamewrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.score-board{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.player-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.p1{
+    color: #fff;
+    text-align: left;
+}
+
+.p2{
+    color: #fff;
+    text-align: right;
+}
+
+.score{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.status, .vencedor{
+    margin: 0;
     text-align: center;
+    margin-bottom: 0px;
+    height: 12px;
 }
 
-.jogador1{
-    position: absolute;
-    top: 28%;
-    left: 25%;
-    transform: translateY(-50%);
-    color: #fff;
-    margin-top: 10px;
-    text-align: left;
-}
-.pontuacao1{
-    position: absolute;
-    top: 35%;
-    left: 28%;
-    transform: translateY(-50%);
-    color: #fff;
-    margin-top: 10px;
-    text-align: left;
-}
-.jogador2{
-    position: absolute;
-    top: 28%;
-    right: 25%;
-    transform: translateY(-50%);
-    color: #fff;
-    margin-top: 10px;
-    text-align: right;
-}
-.pontuacao2{
-    position: absolute;
-    top: 35%;
-    right: 23%;
-    transform: translateY(-50%);
-    color: #fff;
-    margin-top: 10px;
-    text-align: right;
-}
-.status{
+.vencedor, .status{
     display: none;
     color: #fff;
-    margin-bottom: 50px;
-    margin-top: 10%;
-    text-align: center
 }
 
-/*Classe para exibição do jogador vencedor da partida.*/
-.vencedor{
-    display: none;
-    color: #fff;
-    margin-bottom: 50px;
-    margin-top: 10%;
-    text-align: center
-}
+
 
 
 /* Desenho das linhas horizontais e verticais  */
@@ -84,36 +86,18 @@ h1 {
     gap: 0px;
     margin: 20px 0; 
     
-    background-image: linear-gradient(to right,
-    transparent 0,
-    transparent 99px,
-   white 99px,
-   white 101px,
-    transparent 101px), linear-gradient(to right,
-    transparent 0,
-    transparent 199px,
-   white 199px,
-   white 201px,
-    transparent 201px) ,linear-gradient(to bottom,
-    transparent 0,  
-    transparent 99px,
-    white 99px,
-    white 101px,
-    transparent 101px),
-    linear-gradient(to bottom,
-    transparent 0,  
-    transparent 199px,
-    white 199px,
-    white 201px,
-    transparent 201px);
-    
+    background-image: 
+        linear-gradient(to right,transparent 0, transparent 99px, white 99px, white 101px, transparent 101px), 
+        linear-gradient(to right, transparent 0, transparent 199px, white 199px, white 201px, transparent 201px),
+        linear-gradient(to bottom, transparent 0, transparent 99px, white 99px, white 101px, transparent 101px),
+        linear-gradient(to bottom, transparent 0, transparent 199px, white 199px, white 201px, transparent 201px);
 }
 
 .cell {
     background-color: transparent;
     border: none;
     font-size: 2.5rem;
-    cursor: pointer;
+    cursor: pointer; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,9 +107,8 @@ h1 {
 .control-bnt{
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 80px;
+    gap: 15px;
+    margin-top: 50px;
     flex-wrap: wrap;
 
 }
@@ -133,13 +116,19 @@ h1 {
 .control-bnt button{
     padding: 10px 20px;
     min-width: 150px;
-    margin-bottom: 40%;
+    margin-bottom: 0%;
     border: 2px solid black;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     background-color: #fff;
+    color: #000;
+    transition: transform 0.1s;
 
+}
+
+.control-bnt button:active {
+    transform: scale(0.95);
 }
 
 /*Estruturas de combinação reservada para exibição de uma linha vermelha que indica qual combinação foi vencedora*/
@@ -151,43 +140,23 @@ h1 {
     top: 50%;
     left:0;
     transform: center;
-    transform: scale(0);
+    transform: scaleX(0);
     transition: transform 0.3s ease;
+    pointer-events: none;
 
 }
 
 /*Combinação nas fileiras*/
-.win-row-0{
-    top: 50px;
-    transform: scaleX(1);
-}
-.win-row-1{
-    top: 150px;
-    transform: scaleX(1);
-}
-.win-row-2{
-    top: 250px;
-    transform: scaleX(1);
-}
+.win-row-0{ top: 50px; transform: scaleX(1);}
+.win-row-1{top: 150px; transform: scaleX(1);}
+.win-row-2{top: 250px; transform: scaleX(1);}
+
 /*Combinação nas colunas*/
-.win-col-0{
-    transform: rotate(90deg) scaleX(1);
-    left: -100;
+.win-col-0{transform: rotate(90deg) scaleX(1); left: -100;}
+.win-col-1{transform: rotate(90deg) scaleX(1); left: 0;}
+.win-col-2{transform: rotate(90deg) scaleX(1); left: 100;
 }
-.win-col-1{
-    transform: rotate(90deg) scaleX(1);
-    left: 0;
-}
-.win-col-2{
-    transform: rotate(90deg) scaleX(1);
-    left: 100;
-}
+
 /*Combinação nas diagonais*/
-.win.diag-1{
-    transform: rotate(45deg) scaleX(1);
-    top: 150px;
-}
-.win.diag-2{
-    transform: rotate(-45deg) scaleX(1);
-    top: 150px;
-}
+.win.diag-1{transform: rotate(45deg) scaleX(1); top: 150px;}
+.win.diag-2{transform: rotate(-45deg) scaleX(1); top: 150px;}
