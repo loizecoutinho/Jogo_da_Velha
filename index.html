@@ -9,41 +9,52 @@
 <body>
     <main class="container">
         <h1>Jogo da velha</h1>
-        <p id="jogador1" class="jogador1">JOGADOR 1:</p>
-        <p id="pontuacao1" class="pontuacao1">Pontuação:</p>
-        <p id="jogador2" class="jogador2">JOGADOR 2:</p>
-        <p id="pontuacao2" class="pontuacao2">Pontuação:</p>
-        
-        <!--Posição geral para indica qual jogador está na vez.-->
-        <p id="status" class="status">Vez do jogador 1</p>
 
-        <!-- Posição para qual jogador ganhou.-->
-        <p id="vencedor" class="vencedor">x</p>
-        
-        <!--Estrutura geral do tabuleiro -->
-        <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
-            <button class="cell" data-index="0" aria-label="Casa 1"></button>
-            <button class="cell" data-index="1" aria-label="Casa 2"></button>
-            <button class="cell" data-index="2" aria-label="Casa 3"></button>
-            <button class="cell" data-index="3" aria-label="Casa 4"></button>
-            <button class="cell" data-index="4" aria-label="Casa 5"></button>
-            <button class="cell" data-index="5" aria-label="Casa 6"></button>
-            <button class="cell" data-index="6" aria-label="Casa 7"></button>
-            <button class="cell" data-index="7" aria-label="Casa 8"></button>
-            <button class="cell" data-index="8" aria-label="Casa 9"></button>
+        <!--Estrutura de players organizadas em divs.-->
+        <div class="game-wrapper">
+            <div class="score-board">
+                <div class="player-box p1">
+                    <p id="jogador1">JOGADOR 1</p>
+                    <p id="pontuacao" class="score">0</p>
+                </div>
+                <div class="player-box p2">
+                    <p id="jogador2">JOGADOR 2</p>
+                    <p id="pontuacao2" class="score">0</p>
+                </div>
+            </div>
+
+             <!--Posição geral para indica qual jogador está na vez.-->
+            <p id="status" class="status">Vez do jogador 1</p>
+             <!-- Posição para qual jogador ganhou.-->
+            <p id="vencedor" class="vencedor">x</p>
+
+            <!--Estrutura geral do tabuleiro -->
+            <section id="board" class="board" aria-label="Tabuleiro do jogo da Velha"> 
+                <button class="cell" data-index="0" aria-label="Casa 1"></button>
+                <button class="cell" data-index="1" aria-label="Casa 2"></button>
+                <button class="cell" data-index="2" aria-label="Casa 3"></button>
+                <button class="cell" data-index="3" aria-label="Casa 4"></button>
+                <button class="cell" data-index="4" aria-label="Casa 5"></button>
+                <button class="cell" data-index="5" aria-label="Casa 6"></button>
+                <button class="cell" data-index="6" aria-label="Casa 7"></button>
+                <button class="cell" data-index="7" aria-label="Casa 8"></button>
+                <button class="cell" data-index="8" aria-label="Casa 9"></button>
              
             <!--Div para exibição da linha que demarca a combinação vencedora-->
-            <div id="win-line" class="win"></div>
+                <div id="win-line" class="win"></div>
+            </section>
+
+
+        </div>
+
+        <!--Estrutura geral dos botões. -->
+        <section class="control-bnt">
+            <button id="start" class="start-button">Iniciar jogo</button>
+            <button id="reset" class="reset-button">Reiniciar jogo</button>
+            <button id="reset2" class="reset2-button">Reiniciar tabela</button>
+            <button id="reset3" class="reset3-button">Finalizar jogo</button>
         </section>
           
-    </main>
-     
-    <!--Estrutura geral dos principais botões do jogo-->
-    <main class="control-bnt">
-        <button id="start" class="start-button">Iniciar jogo</button>
-        <button id="reset" class="reset-button">Reiniciar jogo</button>
-        <button id="reset2" class="reset2-button">Reiniciar tabela</button>
-        <button id="reset3" class="reset3-button">Finalizar jogo</button>
     </main>
     
     <script src="js/script.js"></script>
