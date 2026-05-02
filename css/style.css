@@ -114,6 +114,7 @@ h1 {
     background-color: transparent;
     border: none;
     font-size: 2.5rem;
+    color: #fff;
     cursor: pointer; 
     display: flex;
     justify-content: center;
@@ -170,9 +171,9 @@ h1 {
 .win-row-2{top: 250px; transform: scaleX(1);}
 
 /*Combinação nas colunas*/
-.win-col-0{transform: rotate(90deg) scaleX(1); left: -100;}
-.win-col-1{transform: rotate(90deg) scaleX(1); left: 0;}
-.win-col-2{transform: rotate(90deg) scaleX(1); left: 100;
+.win-col-0{transform: rotate(90deg) scaleX(1); left: -100px;}
+.win-col-1{transform: rotate(90deg) scaleX(1); left: 0px;}
+.win-col-2{transform: rotate(90deg) scaleX(1); left: 100px;
 }
 
 /*Combinação nas diagonais*/
