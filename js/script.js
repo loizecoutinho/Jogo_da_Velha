@@ -113,3 +113,27 @@ function updateStatus() {
     winnerEl.style.display = 'none';
 }
 
+// lógica do botão de reset
+function resetBoard() {
+    board.fill('');
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.disabled = false;
+    });
+    winLine.className = 'win';
+    gameActive = true;
+    currentPlayer = 'O';
+    updateStatus();
+    winnerEl.textContent = '';
+    winnerEl.style.display = 'none';
+}
+
+// lógica do botão de acabar o jogo
+function finishGame() {
+    scoreO = 0;
+    scoreX = 0;
+    updateScoreboard();
+    resetBoard();
+}
+
+startGame();
