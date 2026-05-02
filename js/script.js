@@ -104,3 +104,12 @@ function updateScoreboard() {
     score1El.textContent = scoreO;
     score2El.textContent = scoreX;
 }
+
+//atualização do jogo e vez de cada player
+function updateStatus() {
+    const currentName = currentPlayer === 'O' ? player1Name.textContent : player2Name.textContent;
+    statusEl.textContent = `${currentName} (${currentPlayer}) está na vez`;
+    statusEl.style.display = 'block';
+    winnerEl.style.display = 'none';
+}
+
