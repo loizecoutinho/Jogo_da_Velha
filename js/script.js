@@ -21,3 +21,45 @@ const WIN_COMBINATIONS = [
     { combo: [2, 4, 6], lineClass: 'diag-2' }
 ];
 
+let board = Array(9).fill('');
+let currentPlayer = 'O';
+let gameActive = true;
+let scoreO = 0;
+let scoreX = 0;
+
+//Starta o Jogo
+function startGame() {
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+    reiniciarBnt.addEventListener('click', resetBoard);
+    finalizarBnt.addEventListener('click', finishGame);
+    resetBoard();
+}
+
+// função lidar com clicks
+function handleCellClick(event) {
+    const cell = event.currentTarget;
+    const index = Number(cell.dataset.index);
+
+    if (!gameActive || board[index] !== '') {
+        return;
+    }
+
+    board[index] = currentPlayer;
+    cell.textContent = currentPlayer;
+    cell.disabled = true;
+
+    const winResult = checkWin();
+    if (winResult) {
+        endGame(winResult);
+        return;
+    }
+
+    if (!board.includes('')) {
+        endGame(null);
+        return;
+    }
+
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O';
+    updateStatus();
+}
+
