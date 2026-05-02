@@ -63,3 +63,14 @@ function handleCellClick(event) {
     updateStatus();
 }
 
+//função checar vitória
+function checkWin() {
+    for (const { combo, lineClass } of WIN_COMBINATIONS) {
+        const [a, b, c] = combo;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+            return { player: board[a], lineClass };
+        }
+    }
+    return null;
+}
+
