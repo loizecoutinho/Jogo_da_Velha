@@ -74,3 +74,33 @@ function checkWin() {
     return null;
 }
 
+//função para o fim do jogo
+function endGame(result) {
+    gameActive = false;
+    if (result) {
+        winLine.className = `win ${result.lineClass}`;
+        const winnerName = result.player === 'O' ? player1Name.textContent : player2Name.textContent;
+        winnerEl.textContent = `Vencedor: ${winnerName}`;
+        winnerEl.style.display = 'block';
+        if (result.player === 'O') {
+            scoreO += 1;
+        } else {
+            scoreX += 1;
+        }
+        updateScoreboard();
+        statusEl.textContent = '';
+        statusEl.style.display = 'none';
+        return;
+    }
+
+    winnerEl.textContent = 'Deu velha!';
+    winnerEl.style.display = 'block';
+    statusEl.textContent = '';
+    statusEl.style.display = 'none';
+}
+
+//atualização dos pontos
+function updateScoreboard() {
+    score1El.textContent = scoreO;
+    score2El.textContent = scoreX;
+}
