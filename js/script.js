@@ -9,6 +9,20 @@ const winLine = document.getElementById('win-line');
 const player1Name = document.getElementById('jogador1');
 const player2Name = document.getElementById('jogador2');
 
+// objeto de jogadores
+const players = {
+    O: {
+        nameEl: player1Name,
+        score: 0,
+        scoreEl: score1El
+    },
+    X: {
+        nameEl: player2Name,
+        score: 0,
+        scoreEl: score2El
+    }
+};
+
 // combinações de vitória
 const WIN_COMBINATIONS = [
     { combo: [0, 1, 2], lineClass: 'win-row-0' },
@@ -24,8 +38,6 @@ const WIN_COMBINATIONS = [
 let board = Array(9).fill('');
 let currentPlayer = 'O';
 let gameActive = true;
-let scoreO = 0;
-let scoreX = 0;
 
 //Starta o Jogo
 function startGame() {
@@ -77,17 +89,17 @@ function checkWin() {
 //função para o fim do jogo
 function endGame(result) {
     gameActive = false;
+
     if (result) {
         winLine.className = `win ${result.lineClass}`;
-        const winnerName = result.player === 'O' ? player1Name.textContent : player2Name.textContent;
+
+        const winnerName = players[result.player].nameEl.textContent;
         winnerEl.textContent = `Vencedor: ${winnerName}`;
         winnerEl.style.display = 'block';
-        if (result.player === 'O') {
-            scoreO += 1;
-        } else {
-            scoreX += 1;
-        }
+
+        players[result.player].score++;
         updateScoreboard();
+
         statusEl.textContent = '';
         statusEl.style.display = 'none';
         return;
@@ -101,13 +113,14 @@ function endGame(result) {
 
 //atualização dos pontos
 function updateScoreboard() {
-    score1El.textContent = scoreO;
-    score2El.textContent = scoreX;
+    Object.keys(players).forEach(player => {
+        players[player].scoreEl.textContent = players[player].score;
+    });
 }
 
 //atualização do jogo e vez de cada player
 function updateStatus() {
-    const currentName = currentPlayer === 'O' ? player1Name.textContent : player2Name.textContent;
+    const currentName = players[currentPlayer].nameEl.textContent;
     statusEl.textContent = `${currentName} (${currentPlayer}) está na vez`;
     statusEl.style.display = 'block';
     winnerEl.style.display = 'none';
@@ -130,8 +143,9 @@ function resetBoard() {
 
 // lógica do botão de acabar o jogo
 function finishGame() {
-    scoreO = 0;
-    scoreX = 0;
+    Object.keys(players).forEach(player => {
+        players[player].score = 0;
+    });
     updateScoreboard();
     resetBoard();
 }
